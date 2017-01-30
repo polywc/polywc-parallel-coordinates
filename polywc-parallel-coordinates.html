@@ -1,0 +1,36 @@
+
+<!-- POLYMER libraries -->
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="polywc-parallel-coordinates">
+
+    <template>
+
+        <div>Qui mettiamo le parallel coordiantes.</div>
+        <svg id="svg"></svg>
+    </template>
+    <script type="text/javascript" src="../d3/d3.min.js"></script>
+    <script>
+        Polymer({
+            is: "polywc-parallel-coordinates",
+
+            properties: {
+
+            },
+
+            attached: function (param) {
+                console.log("attach");
+                debugger;
+                var x = d3.scaleOrdinal();
+
+                var svg = d3.select(this.$.svg)
+                        .attr("width", 500)
+                        .attr("height", 500)
+                        .append("g");
+
+
+            }//EndAttached.
+        });
+    </script>
+
+</dom-module>
