@@ -6,7 +6,7 @@
     "'Donato Pirozzi <'donatopirozzi@gmail.com'>"
   ],
   "description": "Polymer Web-Component that embeds and reuses D3 parallel coordinates.",
-  "main": "",
+  "main": "polywc-parallel-coordinates.html",
   "license": "BSD",
   "ignore": [
     "**/.*",
@@ -17,6 +17,7 @@
   ],
 
   "dependencies": {
+    "polymer": "Polymer/polymer#~1.4.0",
     "d3": "^4.5.0"
   }
 }
