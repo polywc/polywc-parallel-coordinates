@@ -1,13 +1,7 @@
 
-<!-- POLYMER libraries -->
-<link rel="import" href="../polymer/polymer.html">
-
 <dom-module id="polywc-parallel-coordinates">
-
     <template>
-
         <svg id="svg" width="100%" height="100%">
-
         </svg>
         <style>
 
@@ -60,34 +54,36 @@
     </template>
 
     <script type="text/javascript" src="../d3/d3.min.js"></script>
+    <script type="text/javascript" src="LighterWC.js"></script>
     <script>
-        Polymer({
-            is: "polywc-parallel-coordinates",
+        class PolyWCParallelCoordinates extends HTMLElement {
 
-            /**
-             * Properties:
-             *  - *keys* is for numerical values;
-             *  - *data* is an array of objects. Each object in the array has the same
-             *  keys reported in the *keys* property, and the numerical values.
+            constructor() {
+                super();
+            }
+
+            connectedCallback() {
+                console.log('connected');
+                //var svg = d3.select("svg");
+                //debugger;
+            }
+
+            static get is() { return 'polywc-parallel-coordinates'; }
+
+            /*
+             * Other Functions.
              */
-            properties: {
-                keys: { type: "Array", value: [] },
-                data: { type: "Array", value: [] }
-            },
 
-            ready: function() {
-                this.scopeSubtree(this.$.svg, true);
-            },
+            update (param) {
+                var svg = d3.select(this.shadowRoot).select('svg');
 
-            update: function (param) {
                 //Clone the variable locally to be accessible within functions.
                 var _this = this;
                 var _data = this.data;
 
                 //Calculate real/actual width and height;
-                var svg = d3.select("svg");
                 var margin = {top: 30, right: 10, bottom: 10, left: 10}; //Margin has top 30 because it has labels.
-                var svgbbox = d3.select("svg").node().getBoundingClientRect();
+                var svgbbox = svg.node().getBoundingClientRect();
                 var width = svgbbox.width - margin.left - margin.right;
                 var height = svgbbox.height - margin.top - margin.bottom;
 
@@ -118,56 +114,54 @@
 
                 var dragging = {};
                 var line = d3.line(),
-                        background,
-                        foreground,
-                        extents;
+                    background,
+                    foreground,
+                    extents;
 
                 extents = dimensions.map(function(p) { return [0,0]; });
 
                 // Add grey background lines for context.
                 background = svg.append("g")
-                        .attr("class", "background")
-                        .selectAll("path")
-                        .data(_data)
-                        .enter().append("path")
-                        .attr("d", path);
+                    .attr("class", "background")
+                    .selectAll("path")
+                    .data(_data)
+                    .enter().append("path")
+                    .attr("d", path);
 
                 // Add blue foreground lines for focus.
                 foreground = svg.append("g")
-                        .attr("class", "foreground")
-                        .selectAll("path")
-                        .data(_data)
-                        .enter().append("path")
-                        .attr("d", path);
-
-
+                    .attr("class", "foreground")
+                    .selectAll("path")
+                    .data(_data)
+                    .enter().append("path")
+                    .attr("d", path);
 
                 var g = svg.selectAll(".dimension")
-                        .data(dimensions)
-                        .enter().append("g")
-                        .attr("class", "dimension")
-                        //Moves each dimension horizontally to be on the respective vertical lines.
-                        .attr("transform", function(d) { return "translate(" + xScale(d) + ")"});
+                    .data(dimensions)
+                    .enter().append("g")
+                    .attr("class", "dimension")
+                    //Moves each dimension horizontally to be on the respective vertical lines.
+                    .attr("transform", function(d) { return "translate(" + xScale(d) + ")"});
 
                 g.append("g")
-                        .attr("class", "axis")
-                        //Render a vertical line with text values for each dimension (key) in the dataset.
-                        .each(function(key) { d3.select(this).call(d3.axisLeft(verticalScales[key])); })
-                        .append("text")
-                        .attr("fill", "black")
-                        .style("text-anchor", "middle")
-                        .attr("y", -9)
-                        .text(function(d) { return d; });
+                    .attr("class", "axis")
+                    //Render a vertical line with text values for each dimension (key) in the dataset.
+                    .each(function(key) { d3.select(this).call(d3.axisLeft(verticalScales[key])); })
+                    .append("text")
+                    .attr("fill", "black")
+                    .style("text-anchor", "middle")
+                    .attr("y", -9)
+                    .text(function(d) { return d; });
 
                 // Add and store a brush for each axis.
                 g.append("g")
-                        .attr("class", "brush")
-                        .each(function(d) {
-                            d3.select(this).call(verticalScales[d].brush = d3.brushY().extent([[-8, 0], [8,height]]).on("brush start", brushstart).on("brush", brush_parallel_chart));
-                        })
-                        .selectAll("rect")
-                        .attr("x", -8)
-                        .attr("width", 16);
+                    .attr("class", "brush")
+                    .each(function(d) {
+                        d3.select(this).call(verticalScales[d].brush = d3.brushY().extent([[-8, 0], [8,height]]).on("brush start", brushstart).on("brush", brush_parallel_chart));
+                    })
+                    .selectAll("rect")
+                    .attr("x", -8)
+                    .attr("width", 16);
 
                 /*
                  * Other Functions.
@@ -211,8 +205,15 @@
                     });
                 }
 
-            }//EndAttached.
-        });
+            }
+        };
+
+        LighterWC.define(PolyWCParallelCoordinates);
+
     </script>
 
 </dom-module>
+
+
+
+

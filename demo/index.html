@@ -4,16 +4,17 @@
 <html>
 <head>
     <!-- Polymer Dependency -->
-    <link rel="import" href="../../polymer/polymer.html">
+    <!--<link rel="import" href="../../polymer/polymer.html">-->
 
     <!-- Reference to the web-components -->
     <link rel="import" href="../polywc-parallel-coordinates.html">
+
 
     <script type="text/javascript" src="../../d3/d3.min.js"></script>
 </head>
 <body>
     <div style="height: 750px; width: 100%;">
-        <polywc-parallel-coordinates id="paralcoord"></polywc-parallel-coordinates>
+        <polywc-parallel-coordinates id="paralcoord1"></polywc-parallel-coordinates>
     </div>
 
     <p>
@@ -21,22 +22,20 @@
     </p>
 
     <script type="text/javascript">
-        var paralcoord = document.getElementById("paralcoord");
+        var paralcoord1 = document.getElementById("paralcoord1");
 
         d3.csv("cars.csv", function(error, cars) {
             //Remove the "name" key.
-            paralcoord.keys = d3.keys(cars[0]).filter(function(d) {
+            paralcoord1.keys = d3.keys(cars[0]).filter(function(d) {
                 if (d == "name") return false;
                 return true;
             });
 
-            paralcoord.data = cars;
+            paralcoord1.data = cars;
 
             //Calls update of the widget.
-            paralcoord.update();
+            paralcoord1.update();
         });
-
-
     </script>
 </body>
 </html>
