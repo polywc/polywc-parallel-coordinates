@@ -1,11 +1,11 @@
 {
   "name": "polywc-parallel-coordinates",
-  "version": "0.1",
+  "version": "0.2",
   "homepage": "https://github.com/polywc/polywc-parallel-coordinates",
   "authors": [
     "'Donato Pirozzi <'donatopirozzi@gmail.com'>"
   ],
-  "description": "Polymer Web-Component that embeds and reuses D3 parallel coordinates.",
+  "description": "Web-Component that embeds and reuses D3 parallel coordinates.",
   "main": "polywc-parallel-coordinates.html",
   "license": "BSD",
   "ignore": [
@@ -17,7 +17,6 @@
   ],
 
   "dependencies": {
-    "polymer": "Polymer/polymer#~1.4.0",
     "d3": "4.7.3"
   }
 }
