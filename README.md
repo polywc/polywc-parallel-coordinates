@@ -49,5 +49,5 @@ There are many ways to setup the environment in order to make changes to the web
 
     > cd bower_components\polywc-parallel-coordinates
     
-7. Check that everything work as expected by running the file demo\index.html in a web server container (or from PHPStorm) editor.
+7. Check that everything works as expected by running the file demo\index.html in a web server container (or from PHPStorm) editor.
 
