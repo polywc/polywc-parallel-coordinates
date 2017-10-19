@@ -54,3 +54,17 @@ There are many ways to setup the environment in order to make changes to the web
     
 7. Check that everything works as expected by running the file demo\index.html in a web server container (or from PHPStorm) editor.
 
+## Bugs, support and other issues
+
+For any bug or enhancement suggestion please create a new issue using the GitHub [Isses tool](https://github.com/donpir/polywc-data-table/issues).
+
+## License 
+
+The library has released with the LGPL license [link here](http://www.gnu.org/licenses/lgpl.html).
+
+Briefly with this license:
+ 
+ - Freedom to modify and distribute modified copies of _polywc-data-table_, distributing the source code and releasing it with the same LGPL license;
+ - You can dynamically (not statically) link _polywc-data-table_ library in a proprietary software, keeping the JS files as they are.
+
+
