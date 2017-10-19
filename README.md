@@ -60,11 +60,5 @@ For any bug or enhancement suggestion please create a new issue using the GitHub
 
 ## License 
 
-The library has released with the LGPL license [link here](http://www.gnu.org/licenses/lgpl.html).
-
-Briefly with this license:
- 
- - Freedom to modify and distribute modified copies of _polywc-data-table_, distributing the source code and releasing it with the same LGPL license;
- - You can dynamically (not statically) link _polywc-data-table_ library in a proprietary software, keeping the JS files as they are.
-
+The library has released with the BSD 3-Clause License [link here](https://github.com/polywc/polywc-parallel-coordinates/blob/master/LICENSE).
 
