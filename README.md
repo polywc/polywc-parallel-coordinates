@@ -15,7 +15,7 @@ There are many ways to setup the environment in order to make changes to the web
     > cd polywc-parallel-coordinates
     > bower link
     
-Bower link will create a linking to the project directory.
+    Bower link will create a link to the project directory.
     
 3. Create a new directory everywhere on your computer
 
@@ -32,6 +32,15 @@ Bower link will create a linking to the project directory.
         }
     }
     ```
-
     
+5. Link back the polywc-parallel-coordinates library
+
+    > cd polywc-develop
+    > bower link polywc-parallel-coordinates
+   
+   Bower will link the project and update all the dependencies.
+   
+6. You are ready to work on the project, enter in the working directory
+
+    > cd bower_components\polywc-parallel-coordinates
 
