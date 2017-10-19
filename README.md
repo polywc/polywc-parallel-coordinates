@@ -8,6 +8,9 @@ In order to install the web component you need to have bower installed and alrea
     
 Great, you have successfully installed the web component.
 
+## How to use the web component
+In order to use the web component you need to import the html in the 
+
 ## How to extend the web component
 There are many ways to setup the environment in order to make changes to the web component. Here I describe one that uses the bower link command. 
 
@@ -43,7 +46,7 @@ There are many ways to setup the environment in order to make changes to the web
     > cd polywc-develop
     > bower link polywc-parallel-coordinates
    
-   Bower will link the project and update all the dependencies.
+   Bower will link the project and update all the dependencies. In this way you will not rely on the remote git repository to receive the developing updates, but instead every change made to the library will be immediately available in polywc-develop project. Furthermore, you can open the polywc-develop directory directly from the editor (e.g., PHPStorm) and work at same time on the polywc-develop and bower-components/polywc-parallel-coordinates component.
    
 6. You are ready to work on the project, enter in the working directory
 
