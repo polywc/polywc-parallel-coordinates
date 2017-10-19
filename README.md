@@ -56,7 +56,7 @@ There are many ways to setup the environment in order to make changes to the web
 
 ## Bugs, support and other issues
 
-For any bug or enhancement suggestion please create a new issue using the GitHub [Isses tool](https://github.com/donpir/polywc-data-table/issues).
+For any bug or enhancement suggestion please create a new issue using the GitHub [Isses tool](https://github.com/polywc/polywc-parallel-coordinates/issues).
 
 ## License 
 
