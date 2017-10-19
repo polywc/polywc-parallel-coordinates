@@ -4,14 +4,34 @@ Web-Component that embeds and reuses D3 parallel coordinates. It is a pure Javas
 ## How to install and use the web component
 
 ## How to extend the web component
-There are many ways to setup the environment in order to make changes to the web component. Here I describe one. 
+There are many ways to setup the environment in order to make changes to the web component. Here I describe one that uses the bower link command. 
 
-1. Create a new directory for the project
+1. Clone the project from github
 
-    > mkdir polywc-develop  
-    > cd polywc-develop
+    > git clone https://github.com/polywc/polywc-parallel-coordinates.git
+  
+2. Link the project 
+
+    > cd polywc-parallel-coordinates
+    > bower link
     
-2. Create a new file named "bower.json"
-3. 
+Bower link will create a linking to the project directory.
+    
+3. Create a new directory everywhere on your computer
+
+    > mkdir polywc-develop
+    
+4. Create a new bower.json file as follows:
+
+    ```json
+    { 
+        "name": "polywc-develop",
+        "version": "1.0.0",
+        "dependencies": {
+            "polywc-parallel-coordinates": "^0"
+        }
+    }
+    ```
+
     
 
