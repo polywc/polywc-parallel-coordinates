@@ -4,7 +4,7 @@ Web-Component that embeds and reuses D3 parallel coordinates. It is a pure Javas
 ## How to install and use the web component
 
 ## How to extend the web component
-In order to extend or modify the web component, you need to setup your project as follows:
+There are many ways to setup the environment in order to make changes to the web component. Here I describe one. 
 
 1. Create a new directory for the project
 
